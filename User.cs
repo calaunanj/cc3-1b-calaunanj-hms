@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cc3_1b_calaunanj_hms
 {
-    class User
+    public class User
     {
         private static int _idseed = 0;
         public string Name { get; set; }
@@ -14,15 +14,14 @@ namespace cc3_1b_calaunanj_hms
         public string Email { get; set; }
         public int PhoneNumber { get; set; }
         public int ID { get; private set; }
-        protected string Password { get; set; }
-        public User(string name, string address, string email, int phoneNumber, string password)
+        public User(string name, string address, string email, int phoneNumber)
         {
             Name = name;
             Address = address;
             Email = email;
             PhoneNumber = phoneNumber;
             ID = _idseed++;
-            Password = password;
+
         }
 
     }

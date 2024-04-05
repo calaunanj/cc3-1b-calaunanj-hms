@@ -6,11 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace cc3_1b_calaunanj_hms
-
 {
-    class HotelManagementSystem
+    public class HotelManagementSystem
     {
-        private List<Booking> _allBookings = new List<Booking>();
+        private List<Reservation> _allReservation = new List<Reservation>();
         private List<Hotel> _allHotels = new List<Hotel>();
         private List<User> _allUsers = new List<User>();
         public void AddHotel(Hotel hotel)
@@ -24,21 +23,21 @@ namespace cc3_1b_calaunanj_hms
         public void DisplayBookingDetails(int reservationNumber)
         {
             Console.WriteLine($"\nDetails of Reservation {reservationNumber}:");
-            foreach (var booking in _allBookings)
+            foreach (var reservation in _allReservation)
             {
-                if (booking.ReservationNumber == reservationNumber)
+                if (reservation.ReservationNumber == reservationNumber)
                 {
-                    Console.WriteLine($"{booking.ReservationNumber} Start Time: {booking.CheckIn}, End Time {booking.CheckOut}, Duration: {booking.Duration}, Total: {booking.Price} ");
+                    Console.WriteLine($"{reservation.ReservationNumber} Start Time: {reservation.CheckIn}, End Time {reservation.CheckOut}, Duration: {reservation.Duration}, Total: {reservation.Price} ");
                 }
             }
         }
-        public Booking CreateBooking(Hotel hotel, HotelRoom room, Guest guest, DateTime checkInDate, DateTime checkOutDate)
+        public Reservation CreateReservation(Hotel hotel, HotelRoom room, Guest guest, DateTime checkInDate, DateTime checkOutDate)
         {
             guest.TotalRoomCount++;
-            var booking = new Booking(checkInDate, checkOutDate, room);
-            guest.Booking.Add(booking);
-            _allBookings.Add(booking);
-            return booking;
+            var reservation = new Reservation(checkInDate, checkOutDate, room);
+            guest.Booking.Add(reservation);
+            _allReservation.Add(reservation);
+            return reservation;
         }
         public void DisplayHotels()
         {

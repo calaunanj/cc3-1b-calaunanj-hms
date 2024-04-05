@@ -6,18 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace cc3_1b_calaunanj_hms
-
 {
-    class Receptionist : User
+    public class Receptionist : User
     {
-        public Receptionist(string name, string address, string email, int phoneNumber, string password) :
-            base(name, address, email, phoneNumber, password)
+        public Receptionist(string name, string address, string email, int phoneNumber) :
+            base(name, address, email, phoneNumber)
         {
         }
-        public void BookReservation(Guest guest, Booking booking)
+        public void BookReservation(Guest guest, Reservation reservation)
         {
             guest.TotalRoomCount++;
-            guest.Booking.Add(booking);
+            guest.Booking.Add(reservation);
         }
     }
 }

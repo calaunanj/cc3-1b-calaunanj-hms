@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace cc3_1b_calaunanj_hms
 {
-    class Booking
+    public class Reservation
     {
         private static int _reservationNumberSeed = 1234567890;
         public int ReservationNumber { get; private set; }
@@ -19,7 +19,7 @@ namespace cc3_1b_calaunanj_hms
         public DateTime CheckIn { get; set; }
         public DateTime CheckOut { get; set; }
         public int Duration { get; set; }
-        public Booking(DateTime checkin, DateTime checkout, HotelRoom room)
+        public Reservation(DateTime checkin, DateTime checkout, HotelRoom room)
         {
             room.IsOccupied = true;
             Room = room;

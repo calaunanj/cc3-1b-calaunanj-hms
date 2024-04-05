@@ -6,9 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace cc3_1b_calaunanj_hms
-
 {
-    class Hotel
+    public class Hotel
     {
         private List<HotelRoom> _rooms;
         public string Name { get; set; }
